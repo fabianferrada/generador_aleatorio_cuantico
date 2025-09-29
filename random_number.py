@@ -16,9 +16,6 @@ if numOfRegisters > 64:
 
 print(f"Selected number of qubits: {numOfRegisters}")
 
-def sort_result(e):
-    return e[1]
-
 qc = QuantumCircuit(numOfRegisters, numOfRegisters)
 
 for index in range(numOfRegisters):
@@ -28,9 +25,8 @@ qc.measure_all(add_bits=False)
 
 backend = AerSimulator()
 
-job = backend.run(qc)
+job = backend.run(qc, shots=1)
 job.wait_for_final_state()
 
 result = list(job.result().get_counts().items())
-result.sort(reverse=True, key=sort_result)
 print(f"Result {int(result[0][0], 2)}")

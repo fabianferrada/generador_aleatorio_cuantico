@@ -14,3 +14,7 @@ El número de qubits es opcional.
 
 - Añadir soporte de IBM Quantum.
 - Frontend web
+
+## Extras
+
+El proyecto está en inglés con el fin de respetar las buenas prácticas.
