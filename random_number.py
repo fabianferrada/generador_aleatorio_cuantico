@@ -29,4 +29,4 @@ job = backend.run(qc, shots=1)
 job.wait_for_final_state()
 
 result = list(job.result().get_counts().items())
-print(f"Result {int(result[0][0], 2)}")
+print(f"Result: {int(result[0][0], 2)}")
